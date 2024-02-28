@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="contact"
+            type="com.example.mvvmarchitectturenew.Contacts" />
+
+        <variable
+            name="clickHandler"
+            type="com.example.mvvmarchitectturenew.AddNewContactClickHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_1"
+        tools:context=".AddNewContact">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@drawable/bg_add"
+                android:orientation="vertical"
+                android:paddingVertical="50dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Add Data"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filledTextField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="32dp"
+                    android:hint="Enter Name">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={contact.name}"
+                        android:textColor="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="32dp"
+                    android:hint="Enter Email"
+                    android:textColor="@color/black">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={contact.email}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:onClick="@{clickHandler::onSubmitbtnClick}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#2196F3"
+                    android:text="Add Data" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>

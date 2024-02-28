@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MvvmArchitecttureNew" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#FF2196F3</item>
+        <item name="colorPrimaryVariant">#FF03A9F4</item>
+        <item name="colorAccent">#FFA4DBF4</item>
+    </style>
+
+    <style name="Theme.MvvmArchitecttureNew" parent="Base.Theme.MvvmArchitecttureNew" />
+</resources>
